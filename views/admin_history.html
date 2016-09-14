@@ -1,0 +1,21 @@
+<h2>Admin view of history</h2>
+
+<br>
+<table>
+    <thead>
+        <tr>REQUESTED BY</tr>
+        <tr>DEVICE NAME</tr>
+        <tr>QUANTITY</tr>
+        <tr>STATUS</tr>
+
+    </thead>
+    <tbody>
+        <tr ng-repeat =  "request in data | filter:{ requested_by : search  }">
+            <td>{{ request.device_name }}</td>
+            <td>{{ request.requested_by }}</td>
+            <td>{{ request.quantity }}</td>
+            <td>{{ request.request_status }}</td>
+        </tr>
+    </tbody>
+
+</table>

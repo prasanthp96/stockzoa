@@ -1,0 +1,35 @@
+<h2>Admin view of request</h2>
+
+<!--flagvalue to show contents if there is any new request to be shown -->
+<div ng-show=displaytable>
+    <input type="text" ng-model="search">
+    <br>
+
+    <table>
+        <thead>
+            <tr>REQUESTED BY</tr>
+            <tr>DEVICE NAME</tr>
+            <tr>QUANTITY</tr>
+            <tr>STATUS</tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat =  "request in data | filter:{ requested_by : search  }">
+                <td>{{ request.device_name }}</td>
+                <td>{{ request.requested_by }}</td>
+                <td>{{ request.quantity }}</td>
+                <td>{{ request.request_status }}</td>
+                <td><button ng-click="update(request.request_id, 'accept')">Accept</button></td>
+                <td><button ng-click= "update(request.request_id, 'decline' )">Decline</button></td>
+            </tr>
+        </tbody>
+    
+    </table>
+</div>
+<!--flagvalue to show if there is no new request-->
+<div ng-hide=displaytable>
+    
+    <p>No new requests .. </p>
+      
+</div>
+
+<a ng-click="statechange()">history</a>
