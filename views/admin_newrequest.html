@@ -1,7 +1,7 @@
 <h2>Admin view of request</h2>
 
 <!--flagvalue to show contents if there is any new request to be shown -->
-<div ng-show=displaytable>
+<div ng-show= "displaytable" >
     <input type="text" ng-model="search">
     <br>
 
@@ -22,11 +22,10 @@
                 <td><button ng-click= "update(request.request_id, 'decline' )">Decline</button></td>
             </tr>
         </tbody>
-    
     </table>
 </div>
 <!--flagvalue to show if there is no new request-->
-<div ng-hide=displaytable>
+<div ng-hide= "displaytable" >
     
     <p>No new requests .. </p>
       

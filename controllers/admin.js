@@ -16,11 +16,18 @@ app.controller("admincontroller", function($scope, $http, $state){
 
 
 //controller for admin_newrequest.html
-app.controller("admin_newrequestcontroller", function($scope, $http, $state){
+app.controller("admin_newrequestcontroller", function($scope, $http, $state, $window){
     
     //getting the data from database    
     $http.get("endpoints/admin_viewrequest.php" , { params: { statusValue : "new" }   }).success(function(data){
         $scope.data = data;
+        var length = data.length;
+        if( length > 0){
+            $scope.displaytable = true;
+        } else {
+            $scope.displaytable = false;
+        }
+                
         console.log("Success");
         console.log($scope.data);   
     })
@@ -41,23 +48,9 @@ app.controller("admin_newrequestcontroller", function($scope, $http, $state){
                 console.log(response);
             })
             
-            //getting the new contents after updating
-            $http.get("endpoints/admin_viewrequest.php" , { params: { statusValue : "new" }   }).success(function(data){
-                $scope.data = data;
-                var length = data.length;
-                //setting a flag value (check in the admin_newrequest.html)
-                if( length > 0){
-                    $scope.displaytable = 1;
-                } else {
-                    $scope.displaytable = 0;
-                }
-                
-                console.log("Success");
-                console.log($scope.data);   
-            })
-            .error(function() {
-                $scope.data = "error in fetching data";
-            });
+            //reloading the page after updating the element
+            $window.location.reload();
+        
     };
     
     

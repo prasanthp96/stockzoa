@@ -1,7 +1,14 @@
 var app = angular.module("userauth", ["ui.router"]);
 
 app.config(function($stateProvider){
+    
     $stateProvider
+        .state("home", {
+        url: "",
+        controller: "logincontroller",
+        templateUrl: "views/login.html"
+        
+    })
         .state("login", {
         url: "/",
         controller: "logincontroller",
