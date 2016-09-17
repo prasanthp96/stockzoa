@@ -1,4 +1,4 @@
-app.controller("logincontroller", function($scope, $http, $state){
+app.controller("logincontroller", function($scope, $http, $state ){
     
     //variables
     $scope.loginInfo = {
