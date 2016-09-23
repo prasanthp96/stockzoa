@@ -1,4 +1,4 @@
-var app = angular.module("userauth", ["ui.router"]);
+var app = angular.module("userauth", ["ui.router",]);
 
 app.config(function($stateProvider){
     
@@ -53,7 +53,13 @@ app.config(function($stateProvider){
         controller: "view_stockcontroller",
         templateUrl: "views/view_stock.html"
     })
-       
-    
+       .state("add_stock", {
+        url: "/add_stock",
+        controller: "add_stockcontroller",
+        templateUrl: "views/add_stock.html"        
+    }) 
 })
+
+
+
 

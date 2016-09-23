@@ -84,8 +84,7 @@ app.controller("admin_historycontroller", function($scope, $http){
 
 
 //controller to view the current stock 
-
-app.controller("view_stockcontroller", function($scope, $http){
+app.controller("view_stockcontroller", function($scope, $http, $state){
     
     
     $http.get("endpoints/view_stock.php").success(function(data){
@@ -101,6 +100,11 @@ app.controller("view_stockcontroller", function($scope, $http){
         $scope.data = "error in fetching data";
         
     });
+
+    //changing the state to 
+    $scope.statechange = function() {
+        $state.go("add_stock");
+    };
 
 })
 

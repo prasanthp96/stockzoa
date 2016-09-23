@@ -6,13 +6,13 @@ app.controller("labassistcontroller", function($scope, $http, $state){
     console.log($scope.name);
     
     $scope.changestate1 = function() {
-        console.log("changestate1 called");
+        //console.log("changestate1 called");
         $state.go("replacement");
         
     };
     
         $scope.changestate2 = function() {
-        console.log("changestate2 called");
+       // console.log("changestate2 called");
         $state.go("labassist_history");
     }
     
