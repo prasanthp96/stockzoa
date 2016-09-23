@@ -7,8 +7,11 @@ app.controller("admincontroller", function($scope, $http, $state){
     
      $scope.name = localStorage.getItem('current_user');
     
-     $scope.statechange = function() {
-         $state.go("admin_newrequest");
+     $scope.statechange = function(newstate) {
+         
+         console.log(changeto);
+         var changeto = newstate;
+         $state.go(changeto);
      }
      
     
@@ -56,7 +59,7 @@ app.controller("admin_newrequestcontroller", function($scope, $http, $state, $wi
     
     $scope.statechange = function() {
         $state.go("admin_history");
-    }
+    };
     
 })
 
@@ -75,10 +78,30 @@ app.controller("admin_historycontroller", function($scope, $http){
     .error(function(){
        $scope.data = "error in fetching data"; 
     });
-    
-    
-    
+       
 })
 
+
+
+//controller to view the current stock 
+
+app.controller("view_stockcontroller", function($scope, $http){
+    
+    
+    $http.get("endpoints/view_stock.php").success(function(data){
+        
+        $scope.data = data;
+        console.log("read successfully");
+        console.log($scope.data);
+        
+    })
+    
+    .error(function(){
+        
+        $scope.data = "error in fetching data";
+        
+    });
+
+})
 
     

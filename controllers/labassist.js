@@ -11,7 +11,6 @@ app.controller("labassistcontroller", function($scope, $http, $state){
         
     };
     
-    
         $scope.changestate2 = function() {
         console.log("changestate2 called");
         $state.go("labassist_history");

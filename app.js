@@ -48,6 +48,12 @@ app.config(function($stateProvider){
         templateUrl: "views/labassist_history.html"
         
     })
+      .state("view_stock", {
+        url: "/view_stock",
+        controller: "view_stockcontroller",
+        templateUrl: "views/view_stock.html"
+    })
+       
     
 })
 

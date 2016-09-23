@@ -4,7 +4,7 @@
 <div ng-show= "displaytable" >
     <input type="text" ng-model="search">
     <br>
-
+    
     <table>
         <thead>
             <tr>REQUESTED BY</tr>
@@ -23,7 +23,7 @@
             </tr>
         </tbody>
     </table>
-</div>
+</div> 
 <!--flagvalue to show if there is no new request-->
 <div ng-hide= "displaytable" >
     
@@ -31,4 +31,4 @@
       
 </div>
 
-<a ng-click="statechange()">history</a>
+<button ng-click="statechange()">History</button>

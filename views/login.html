@@ -1,44 +1,13 @@
 <div>
 
-<div class="one_login">
-  <div class="row">
-  <div class="col s9 push-s3">
-  <div class="row">
-  
-      <div class="col s7">
-      <div class="card transparent">
-      <div class="card-content black-text">
+<h2>Login</h2>
+        
+    <input type="text"  ng-model="loginInfo.username" placeholder="username" />
+    <input type="password" ng-model="loginInfo.password" placeholder="password" />
+    <button ng-click="loginuser()">login</button>
 
-  		<div class="row">
- 			<div class="input-field col s11">
-			<label for="first_name">User Name:</label>
- 			<input id="first_name" ng-model="loginInfo.username" type="text" class="validate">
- 			</div>
- 			</div>
- 			
- 			<div class="row">
- 			<div class="input-field col s11">
-			<label for="password">Password:</label>
- 			<input id="password" ng-model="loginInfo.password" type="password" class="validate">
- 			</div>
- 			</div>
-
-			<div class="row">
-			<div class="col s7 push-s4">
-			<button class="btn waves-effect waves-ripple" ng-click="loginuser()">sign in</button>
-			</div>
-			</div>
-          
-      </div>
-	  </div>
-      </div>
-  </div>
-  </div>
-  </div>
-  </div>
-
-    
 
 </div>
 
   
+    
