@@ -109,3 +109,37 @@ app.controller("view_stockcontroller", function($scope, $http, $state){
 })
 
     
+app.controller("add_stockcontroller", function($scope, $http, $state){
+    
+    console.log("add_stockcontroller called!");
+    
+    $scope.add = {
+        
+        name: undefined,
+        quantity: undefined
+    }
+    
+    
+    $scope.add_stock = function() {
+        
+        var data = {
+            
+            name: $scope.add.name,
+            quantity: $scope.add.quantity
+            
+        }
+        
+        $http.post("endpoints/add_stock_single.php",data).success(function(response){
+            
+            console.log(response);
+            $state.go("view_stock");
+            
+            
+        }).error(function(error){
+            console.error(error);
+        });
+        
+        
+    };
+    
+})
