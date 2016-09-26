@@ -1,4 +1,4 @@
-<table>
+<!-- <table>
 
     <thead>
     
@@ -22,4 +22,33 @@
 </table>
 
 
-<button ng-click= "statechange()">Add new stock</button>
+<button ng-click= "statechange()">Add new stock</button> -->
+
+
+<div class="row container two">
+  <div class="col s11 m12">
+  <div class="card transparent">
+	<table border="1" class="centered bordered highlight responsive-table">
+  <thead>
+   <tr>
+		<th data-field="id"><h5><b>Component Name</b></h5></th>
+		<th data-field="name"><h5><b>Brand Name</b></h5></th>
+		<th data-field="price"><h5><b>Available Quantity</b></h5></th>
+		<th data-field="distribution"><h5><b>Distribution</b></h5></th>
+	 </tr>
+  </thead>
+	<tbody>
+	<tr ng-repeat = "consumable in data">
+		<td>{{ consumable.name }} </td>    
+        <td>{{ consumable.amount }}  </td>
+	</tr>
+	</tbody>
+	</table>
+  <div class="action-btn horizontal" align="center">
+    <a class="btn-floating btn-large blue" >
+      <i class="material-icons" ng-click= "statechange()">mode_edit</i>
+    </a>
+	</div>	
+	</div>
+</div>
+</div>

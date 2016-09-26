@@ -109,7 +109,7 @@ app.controller("view_stockcontroller", function($scope, $http, $state){
 })
 
     
-app.controller("add_stockcontroller", function($scope, $http, $state){
+app.controller("add_stockcontroller", ['$scope','Upload', function($scope, $http, $state, Upload) {
     
     console.log("add_stockcontroller called!");
     
@@ -120,6 +120,7 @@ app.controller("add_stockcontroller", function($scope, $http, $state){
     }
     
     
+    //adding stock using form
     $scope.add_stock = function() {
         
         var data = {
@@ -142,4 +143,26 @@ app.controller("add_stockcontroller", function($scope, $http, $state){
         
     };
     
-})
+    
+    //importing the stock by using excel sheet
+    $scope.add_file = function() {
+        
+        if($scope.form.file.$valid && $scope.file) {   
+            $scope.upload($scope.file);
+        }
+    };
+                                       
+    var upload = Upload.upload({
+                                       
+        url: './endpoints/add_stock_file.php',
+                            
+        data: {key: file}                                              
+    })
+                                       
+        upload.then(function(resp){
+                                       
+                                       
+                                       
+    });
+    
+}])

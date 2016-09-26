@@ -1,4 +1,4 @@
-<div>
+<!--div>
 
 <h2>Login</h2>
         
@@ -7,7 +7,42 @@
     <button ng-click="loginuser()">login</button>
 
 
-</div>
+</div-->
 
+<form method="POST">
+  <div class="row indexone">
+  <div class="col s9 push-s3">
+  <div class="row">
   
-    
+      <div class="col s7">
+			<div class="card transparent">
+      <div class="card-content black-text">
+
+  		<div class="row">
+ 			<div class="input-field col s11">
+			<label for="first_name">User Name:</label>
+ 			<input id="first_name"  ng-model="loginInfo.username" type="text" class="validate">
+ 			</div>
+ 			</div>
+ 			
+ 			<div class="row">
+ 			<div class="input-field col s11">
+			<label for="password">Password:</label>
+ 			<input id="password" ng-model="loginInfo.password" type="password" class="validate">
+ 			</div>
+ 			</div>
+
+			<div class="row">
+			<div class="col s7 push-s4">
+			<button class="btn waves-effect waves-ripple" type="submit" name="action" ng-click="loginuser()">sign in</button>
+
+			</div>
+			</div>
+			</div>
+	</div>
+
+	</div>
+  </div>
+  </div>
+  </div>
+</form>

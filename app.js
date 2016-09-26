@@ -1,4 +1,4 @@
-var app = angular.module("userauth", ["ui.router",]);
+var app = angular.module("userauth", ["ui.router","ngFileUpload"]);
 
 app.config(function($stateProvider){
     

@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 
 <h2>Replacement</h2>
     
@@ -11,4 +11,40 @@
     <button ng-click="request_replacement()">Request replacement</button>
     
 
-</div>
+</div> -->
+
+
+<div class="row replacementone">
+     <div class="col s12 m11">
+          <div class="card Transparent hoverable">
+			<div class="row">
+			<form class="col s12" ng-submit="request_replacement()">
+			<div class="row replacementtwo">
+				
+				<div class="input-field col s8 active" >
+				<input  type="text" class="validate" ng-model="replacement.devicename" required>
+				<label for="first_name">Component Name:</label>
+				</div>
+				
+				<div class="input-field col s8">
+				<input type="number" class="validate"  ng-model="replacement.quantity" required>
+				<label for="first_name">Quantity:</label>
+				</div>
+				
+				<div class="row">
+				<div class="input-field col s8">
+				<textarea id="textarea1" class="materialize-textarea" ng-model= "replacement.description"></textarea>
+				<label for="textarea1">Description:</label>
+				</div>
+				</div>
+				<div class="replacementthree">
+				
+				<button class="btn waves-effect waves-light" type="submit" name="action">Reg. for replacement
+				</button>
+				
+				</div>
+			</form>
+			</div>
+			</div>
+		  </div>
+      </div>
