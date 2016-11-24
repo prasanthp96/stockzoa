@@ -19,22 +19,21 @@
 
 </table>
 -->
-
-
+<a class="admintwo waves-effect waves-light btn" ng-click="statechange('labassist')">back</a>
 
 <div class="row historyone">
   <div class="col s12 m11">
     <div class="card transparent">          
 	<table class="centered highlight bordered responsive-table">
     <thead style="background-color:lightblue;">
-		<th data-field="name">REQUESTED BY</th>
+		<!--<th data-field="name">REQUESTED BY</th>-->
         <th data-field="name">DEVICE NAME</th>
         <th data-field="price">QUANTITY</th>
         <th data-field="name">STATUS</th>
     </thead>
     <tbody>
         <tr ng-repeat =  "request in data | filter:{ requested_by : search  }">            
-			<td>{{ request.requested_by }}</td>
+			<!--//<td>{{ request.requested_by }}</td>-->
             <td>{{ request.device_name }}</td>
 			<td>{{ request.quantity }}</td>
             <td>{{ request.request_status }}</td>
@@ -44,3 +43,4 @@
 	</div>
   </div>
 </div>
+

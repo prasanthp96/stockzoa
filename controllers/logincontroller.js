@@ -16,7 +16,7 @@ app.controller("logincontroller", function($scope, $http, $state ){
         
     //calling http post for php file
     $http.post("endpoints/login.php", data).success(function(response){
-        //console.log(response);
+        console.log(response);
         //localStorage.setItem("current_user", JSON.stringify({response}));
         localStorage.setItem("current_user", response);
         if(localStorage.getItem("current_user") == "undefined") {

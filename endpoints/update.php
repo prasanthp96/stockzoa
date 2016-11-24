@@ -4,22 +4,41 @@
     
     $data = json_decode(file_get_contents("php://input"));
 
+    $name = $data->update_name;
+
+    $quantity = $data->update_quantity;
+
     $id = $data->update_id;
 
     $status = $data->update_status;
 
     echo $id;
+    
+    $stock = "UPDATE stock SET amount = amount - ".$quantity." where name = '".$name."'";
 
-    $query = "UPDATE request SET request_status = '".$status."' where request_id =  ".$id."";
+    $ans  = mysqli_query($conn,$stock);
 
-    $result = mysqli_query($conn,$query);
+    
+    if($ans){
+    
+            $query = "UPDATE request SET request_status = '".$status."' where request_id =  ".$id."";
 
-    if($result) {
-        echo "succesfully updated";
+            $result = mysqli_query($conn,$query);
+
+            if($result) {
+                echo "succesfully updated";
+            }
+            else {
+                echo mysqli_error($result);
+            }
+
+        
+    } else {
+      
+        echo mysqli_error($ans);
+        
     }
-    else {
-        echo mysqli_error($result);
-    }
 
+    
 
 ?>

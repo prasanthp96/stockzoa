@@ -1,4 +1,4 @@
-<label>Name:</label><input type="text" ng-model="add.name">
+<!--<label>Name:</label><input type="text" ng-model="add.name">
 <label>Quantity:</label><input type="number" ng-model="add.quantity">
 <button ng-click="add_stock()">Add</button>
 
@@ -8,6 +8,45 @@
 
     <div class="button" ngf-select ng-model="file"></div>
     <button type="submit" ng-click="submit()">Submit</button>
-    
+   
 </form>
+-->
+<div class="newrequestone row">
+  <a class="waves-effect waves-light btn" ng-click="">Back</a><!--go to request page-->
+ </div>
+<div class="row stockone">
+	<div class="col s10 m10">
+    <div class="card transparent">
+	<div class="row stocktwo">
+ 	<div class="input-field col s7">
+		<label >Name of the component:</label>
+ 		<input id="first_name" type="text" class="validate" length="20" ng-model="add.name">
+ 	</div>
+	<div class="input-field col s7 stockfour">
+		<label>Quantity</label>
+		<input id="first_name" type="text" class="validate" ng-model="add.quantity">
+  	</div>
+	</div>
+	</div>
+	</div>
+</div>
 
+<div class="row stockone">
+	<div class="col s10 m10">
+    <div class="card transparent">
+	<div class="row stocktwo">
+	<div class="row">
+	<p><h5>
+	<b>Or select file to insert</b>
+	 <a class="btn-floating btn-large waves-effect waves-light green" ngf-select ng-model="file" ng-click="submit()"><i class="material-icons">add</i></a>
+ 	</h5></p>
+	</div>
+	
+</div>
+
+		</div>
+	</div>
+</div>
+<div class="stockthree">
+  <button class="btn waves-effect waves-light" name="action"  ng-click="add_stock()">submit</button>
+</div>

@@ -5,8 +5,24 @@ app.controller("labassistcontroller", function($scope, $http, $state){
     $scope.name = localStorage.getItem('current_user');
     console.log($scope.name);
     
-    $scope.changestate1 = function() {
+	 $scope.statechange = function(newstate) {
+         
+         console.log(changeto);
+         var changeto = newstate;
+         $state.go(changeto);
+     }
+	 
+	 $scope.logout = function() {
+		 
+		 localStorage.clear();
+		 $state.go("home");
+		 
+	 }
+     
+    /*$scope.changestate1 = function() {
         //console.log("changestate1 called");
+		
+		
         $state.go("replacement");
         
     };
@@ -14,13 +30,28 @@ app.controller("labassistcontroller", function($scope, $http, $state){
         $scope.changestate2 = function() {
        // console.log("changestate2 called");
         $state.go("labassist_history");
-    }
+    }*/
     
 
 })
 
 
 app.controller("replacementcontroller", function($scope, $http, $state){
+
+	$scope.statechange = function(newstate) {
+         
+         console.log(changeto);
+         var changeto = newstate;
+         $state.go(changeto);
+     }
+	 
+	 $scope.logout = function() {
+		 
+		 localStorage.clear();
+		 $state.go("home");
+		 
+	 }
+
     
     //getting the lab information
     $scope.username = localStorage.getItem('current_user');
@@ -66,11 +97,25 @@ app.controller("replacementcontroller", function($scope, $http, $state){
 })
 
 
-app.controller("labassist_historycontroller", function ($scope, $http){
+app.controller("labassist_historycontroller", function ($scope,$state, $http){
     
     //console.log("Inside the controller");
     
     $scope.user = localStorage.getItem('current_user');
+	
+		 $scope.statechange = function(newstate) {
+         
+         console.log(changeto);
+         var changeto = newstate;
+         $state.go(changeto);
+     }
+	 
+	 $scope.logout = function() {
+		 
+		 localStorage.clear();
+		 $state.go("home");
+		 
+	 }
 
     
     //console.log($scope.user);

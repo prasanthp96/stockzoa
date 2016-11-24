@@ -1,8 +1,8 @@
-<h2>Admin view of request</h2>
+<!--<h2>Admin view of request</h2>
 
-<!--flagvalue to show contents if there is any new request to be shown -->
+flagvalue to show contents if there is any new request to be shown 
 <div ng-show= "displaytable" >
-    <input type="text" ng-model="search">
+    <input type="text" ng-model="search">         "note:uncompleted"
     <br>
     
     <table>
@@ -14,21 +14,92 @@
         </thead>
         <tbody>
             <tr ng-repeat =  "request in data | filter:{ requested_by : search  }">
-                <td>{{ request.device_name }}</td>
-                <td>{{ request.requested_by }}</td>
-                <td>{{ request.quantity }}</td>
-                <td>{{ request.request_status }}</td>
-                <td><button ng-click="update(request.request_id, 'accept')">Accept</button></td>
-                <td><button ng-click= "update(request.request_id, 'decline' )">Decline</button></td>
+                <th>{{ request.device_name }}</th>
+                <th>{{ request.requested_by }}</th>
+                <th>{{ request.quantity }}</th>
+                <th>{{ request.request_status }}</th>
+                <th><button ng-click="update(request.request_id, 'accept')">Accept</button></th>
+                <th><button ng-click= "update(request.request_id, 'decline' )">Decline</button></th>
             </tr>
         </tbody>
     </table>
 </div> 
-<!--flagvalue to show if there is no new request-->
+flagvalue to show if there is no new request
 <div ng-hide= "displaytable" >
     
     <p>No new requests .. </p>
       
 </div>
 
-<button ng-click="statechange()">History</button>
+<button ng-click="statechange()">History</button> -->
+
+<!--div class="navbar-fixed">
+<nav>
+    <div class="nav-wrapper blue">
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a ng-click="statechange('admin_newrequest')">Request</a></li>
+        <li><a ng-click="statechange('view_stock')">Stock</a></li>
+		<li><a ng-click="logout()">Logout</a></li>
+	  </ul>
+    </div>
+  </nav>
+  </div>-->
+  
+  <div class="newrequestone row">
+  <a class="waves-effect waves-light btn" ng-click="statechange('admin')">Back</a><!-- go to admin page-->
+  <button class="newrequestfour btn waves-effect waves-light " ng-click="statechange('admin_history')">History</button><!--go to history page-->
+</div>
+<div ng-show= "displaytable">
+<div class="row newreq">
+	<div class="col s12 m12">
+		<div class="card transparent">
+		<table class="bordered centered highlight responsive-table">
+        <thead>
+          <tr>
+			<th data-field="name">REQUESTED BY</th>
+            <th data-field="name">DEVICE NAME</th>
+            <th data-field="name">QUANTITY</th>
+            <th data-field="name">STATUS</th>
+			<th data-field="price">Accept</th>
+			<th data-field="price">Decline</th>
+          </tr>
+		  </thead>
+        <tbody>
+          <tr ng-repeat =  "request in data | filter:{ requested_by : search  }">
+		  
+           	
+						
+						<td data-field="name">{{ request.requested_by }}</td>
+						<td data-field="name">{{ request.device_name }}</td>
+						<td data-field="name">{{ request.quantity }}</td>
+						<td data-field="name">{{ request.request_status }}</td>
+						<td data-field="name"><a class="btn-floating btn-large green" ng-click="update(request.device_name,request.quantity,request.request_id, 'accept')"><i class="material-icons">done</i></a></td>
+						<td data-field="name"><a class="btn-floating btn-large red" ng-click= "update(request.request_id, 'decline' )"><i class="material-icons">clear</i></a></td>
+					
+			
+		  </tr>
+        </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<div ng-hide= "displaytable" >
+    
+    <div class="row newrequesttwo">
+		<div class="col s7 m5">
+			<div class="card black hoverable">
+				<div class="card-content blue-text">
+				<p>No New Request for you :)</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+          <!-- "note:uncompleted"-->
+  
+  
+  
+  
+  
